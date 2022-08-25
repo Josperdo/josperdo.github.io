@@ -1,1 +1,1 @@
-Just a simple personal website that can be used for various things.
+A relatively minimalistic personal website that can be used for various things.
