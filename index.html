@@ -5,6 +5,7 @@
 	<title>John Sperry</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="John Sperry — builder and security enthusiast. Projects, writing, and more." />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -43,7 +44,7 @@
 				<section class="hero">
 					<div class="hero-content">
 						<h1>John Sperry</h1>
-						<p class="subtitle">Software Engineer</p>
+						<p class="subtitle">Builder & Security Enthusiast</p>
 						<div class="hero-divider"></div>
 						<p class="intro-blurb">I build tools and write about what I learn along the way. Explore my projects below, or read my latest thinking on Substack.</p>
 						<div class="quick-links">
@@ -68,30 +69,42 @@
 			<article id="work" class="panel">
 				<header>
 					<h2>Projects</h2>
+					<p>Some of these are ongoing — check the repos for the latest updates.</p>
 				</header>
 				<div class="project-grid">
 					<div class="project-card">
-						<h3>Project One</h3>
-						<p>A brief description of what this project does and the tech behind it.</p>
+						<h3>Log Event Filter</h3>
+						<p>Python utility that parses authentication logs to identify failed SSH login attempts, tracks repeat offenders, and exports results to CSV/JSON.</p>
 						<div class="project-links">
-							<a href="#" class="link-accent">Demo</a>
-							<a href="#" class="link-muted">Code</a>
+							<a href="https://github.com/Josperdo/Log-Event-Filter" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
 						</div>
 					</div>
 					<div class="project-card">
-						<h3>Project Two</h3>
-						<p>A brief description of what this project does and the tech behind it.</p>
+						<h3>Security Baseline Checker</h3>
+						<p>Lightweight Bash utility for auditing basic security configurations on Linux systems, including privilege escalation checks and group membership analysis.</p>
 						<div class="project-links">
-							<a href="#" class="link-accent">Demo</a>
-							<a href="#" class="link-muted">Code</a>
+							<a href="https://github.com/Josperdo/Security-Baseline-Checker" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
 						</div>
 					</div>
 					<div class="project-card">
-						<h3>Project Three</h3>
-						<p>A brief description of what this project does and the tech behind it.</p>
+						<h3>Azure Security Monitor</h3>
+						<p>Parses Azure Activity Logs to detect risky operations like elevated RBAC assignments and Key Vault secret access.</p>
 						<div class="project-links">
-							<a href="#" class="link-accent">Demo</a>
-							<a href="#" class="link-muted">Code</a>
+							<a href="https://github.com/Josperdo/Azure-Security-Monitor" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						</div>
+					</div>
+					<div class="project-card">
+						<h3>Winlog-Detect</h3>
+						<p>Parses Windows Security event logs to detect failed-logon surges and suspicious process creation patterns like encoded PowerShell and certutil abuse.</p>
+						<div class="project-links">
+							<a href="https://github.com/Josperdo/winlog-detect" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						</div>
+					</div>
+					<div class="project-card">
+						<h3>Mjolnir</h3>
+						<p>Discord bot that monitors game playtime and applies temporary timeouts to users who exceed weekly hour limits. Opt-in tracking with SQLite persistence.</p>
+						<div class="project-links">
+							<a href="https://github.com/Josperdo/mjolnir" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
 						</div>
 					</div>
 				</div>
