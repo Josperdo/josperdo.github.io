@@ -1,11 +1,14 @@
-<!DOCTYPE HTML>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 	<title>John Sperry</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
@@ -14,140 +17,117 @@
 
 <body class="is-preload">
 
-	<!-- Wrapper-->
-	<div id="wrapper">
+	<!-- Grain overlay -->
+	<div id="grain" aria-hidden="true"></div>
 
-		<!-- Nav -->
+	<!-- Layout shell -->
+	<div id="layout">
+
+		<!-- Sidebar Nav (becomes top bar on mobile) -->
 		<nav id="nav">
-			<a href="#" class="icon solid fa-home"><span>Home</span></a>
-			<a href="#work" class="icon solid fa-folder"><span>Projects</span></a>
-			<a href="https://github.com/josperdo" class="icon brands fa-github"><span>Github</span></a>
-			<a href="https://www.linkedin.com/in/johnrobsperry/"
-				class="icon brands fa-linkedin"><span>LinkedIn</span></a>
-			<!-- <a href="https://soundcloud.com/josperdo" class="icon brands fa-soundcloud"><span>Soundcloud</span></a> -->
-			<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+			<div class="nav-inner">
+				<a href="#" data-panel="home" class="nav-link icon solid fa-home"><span>Home</span></a>
+				<a href="#work" data-panel="work" class="nav-link icon solid fa-folder"><span>Projects</span></a>
+				<a href="https://substack.com/@josperdo" target="_blank" rel="noopener" class="nav-link icon solid fa-pen-nib"><span>Substack</span></a>
+				<a href="https://github.com/josperdo" target="_blank" rel="noopener" class="nav-link icon brands fa-github"><span>GitHub</span></a>
+				<a href="https://www.linkedin.com/in/johnrobsperry/" target="_blank" rel="noopener" class="nav-link icon brands fa-linkedin"><span>LinkedIn</span></a>
+				<a href="#contact" data-panel="contact" class="nav-link icon solid fa-envelope"><span>Contact</span></a>
+			</div>
 		</nav>
 
-		<!-- Main -->
-		<div id="main">
+		<!-- Content -->
+		<main id="content">
 
-			<!-- Me -->
-			<article id="home" class="panel intro">
-				<header>
-					<h1>John Sperry</h1>
-					<p>Software Engineer</p>
-					<p style="font-size: 1.5rem"></p>
-				</header>
-				<a href="#work" class="jumplink pic">
-					<!-- <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span> -->
-					<img src="images/meplaceholder.jpg" alt="" />
-				</a>
+			<!-- Home -->
+			<article id="home" class="panel">
+				<section class="hero">
+					<div class="hero-content">
+						<h1>John Sperry</h1>
+						<p class="subtitle">Software Engineer</p>
+						<div class="hero-divider"></div>
+						<p class="intro-blurb">I build tools and write about what I learn along the way. Explore my projects below, or read my latest thinking on Substack.</p>
+						<div class="quick-links">
+							<a href="#work" class="quick-link">
+								<i class="fas fa-folder"></i>
+								<span>View Projects</span>
+							</a>
+							<a href="https://substack.com/@josperdo" target="_blank" rel="noopener" class="quick-link">
+								<i class="fas fa-pen-nib"></i>
+								<span>Read Substack</span>
+							</a>
+							<a href="https://github.com/josperdo" target="_blank" rel="noopener" class="quick-link">
+								<i class="fab fa-github"></i>
+								<span>Browse GitHub</span>
+							</a>
+						</div>
+					</div>
+				</section>
 			</article>
 
-			<!-- Work -->
+			<!-- Projects -->
 			<article id="work" class="panel">
 				<header>
 					<h2>Projects</h2>
 				</header>
-				<p>Coming soon...</p>
-				<section>
-					<div class="row">
-						<!-- <div class="col-4 col-6-medium col-12-small show-image">
-							<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-							<div style="text-align:center">
-								<button type="button" class="btn btn-outline-primary">Demo</button>
-								<button type="button" class="btn btn-outline-secondary">See Code</button>
-							</div>
+				<div class="project-grid">
+					<div class="project-card">
+						<h3>Project One</h3>
+						<p>A brief description of what this project does and the tech behind it.</p>
+						<div class="project-links">
+							<a href="#" class="link-accent">Demo</a>
+							<a href="#" class="link-muted">Code</a>
 						</div>
-						<div class="col-4 col-6-medium col-12-small show-image">
-							<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
-							<div style="text-align:center">
-								<button type="button" class="btn btn-outline-primary">Demo</button>
-								<button type="button" class="btn btn-outline-secondary">See Code</button>
-							</div>
-						</div>
-						<div class="col-4 col-6-medium col-12-small show-image">
-							<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
-							<div style="text-align:center">
-								<button type="button" class="btn btn-outline-primary">Demo</button>
-								<button type="button" class="btn btn-outline-secondary">See Code</button>
-							</div>
-						</div> -->
-
-						<!-- <div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
-										</div> -->
 					</div>
-				</section>
+					<div class="project-card">
+						<h3>Project Two</h3>
+						<p>A brief description of what this project does and the tech behind it.</p>
+						<div class="project-links">
+							<a href="#" class="link-accent">Demo</a>
+							<a href="#" class="link-muted">Code</a>
+						</div>
+					</div>
+					<div class="project-card">
+						<h3>Project Three</h3>
+						<p>A brief description of what this project does and the tech behind it.</p>
+						<div class="project-links">
+							<a href="#" class="link-accent">Demo</a>
+							<a href="#" class="link-muted">Code</a>
+						</div>
+					</div>
+				</div>
 			</article>
 
 			<!-- Contact -->
 			<article id="contact" class="panel">
 				<header>
-					<h2>Contact Me</h2>
+					<h2>Get in Touch</h2>
 				</header>
-				<form action="mailto:john.sperry1@gmail.com" method="post">
-					<div>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<input type="text" name="name" placeholder="Name" />
-							</div>
-							<div class="col-6 col-12-medium">
-								<input type="text" name="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<input type="text" name="subject" placeholder="Subject" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="col-12">
-								<input type="submit" value="Send Message" />
-							</div>
-						</div>
-					</div>
-				</form>
+				<p>Feel free to reach out — I'm always open to a conversation.</p>
+				<div class="contact-links">
+					<a href="mailto:john.sperry1@gmail.com" class="contact-item">
+						<i class="fas fa-envelope"></i>
+						<span>john.sperry1@gmail.com</span>
+					</a>
+					<a href="https://github.com/josperdo" target="_blank" rel="noopener" class="contact-item">
+						<i class="fab fa-github"></i>
+						<span>github.com/josperdo</span>
+					</a>
+					<a href="https://www.linkedin.com/in/johnrobsperry/" target="_blank" rel="noopener" class="contact-item">
+						<i class="fab fa-linkedin"></i>
+						<span>linkedin.com/in/johnrobsperry</span>
+					</a>
+					<a href="https://substack.com/@josperdo" target="_blank" rel="noopener" class="contact-item">
+						<i class="fas fa-pen-nib"></i>
+						<span>substack.com/@josperdo</span>
+					</a>
+				</div>
 			</article>
 
-		</div>
+		</main>
 
-		<!-- Footer -->
-		<!-- <div id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div> -->
 	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
 </body>
