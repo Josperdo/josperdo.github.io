@@ -5,14 +5,6 @@
 	var navLinks = nav.querySelectorAll('.nav-link');
 	var sections = document.querySelectorAll('#content section[id]');
 
-	// --- Fade in on load ---
-
-	window.addEventListener('load', function () {
-		setTimeout(function () {
-			document.body.classList.remove('is-preload');
-		}, 100);
-	});
-
 	// --- Email assembler ---
 	// Assembles mailto href from split data attributes so the address never
 	// appears as plain text in source HTML (basic scraper deterrent).
