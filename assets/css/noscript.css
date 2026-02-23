@@ -3,21 +3,3 @@
 #layout {
 	opacity: 1 !important;
 }
-
-#nav .nav-link {
-	color: var(--text);
-}
-
-.panel {
-	display: block !important;
-	opacity: 1 !important;
-	min-height: auto !important;
-	border-bottom: 1px solid var(--border);
-	padding-bottom: 2rem;
-	margin-bottom: 2rem;
-}
-
-.panel:last-child {
-	border-bottom: none;
-	margin-bottom: 0;
-}

@@ -1,115 +1,81 @@
 (function () {
 
-	var content = document.getElementById('content');
-	var panels = content.querySelectorAll('.panel');
-	var nav = document.getElementById('nav');
+	var nav     = document.getElementById('nav');
+	var navBrand = nav.querySelector('.nav-brand');
 	var navLinks = nav.querySelectorAll('.nav-link');
+	var sections = document.querySelectorAll('#content section[id]');
 
-	// Remove preload class after page load.
+	// --- Fade in on load ---
+
 	window.addEventListener('load', function () {
 		setTimeout(function () {
 			document.body.classList.remove('is-preload');
 		}, 100);
 	});
 
-	// Resolve hash to a panel id.
-	function resolvePanel(hash) {
-		if (!hash || hash === '#') return 'home';
-		var id = hash.substring(1);
-		var el = document.getElementById(id);
-		return (el && el.classList.contains('panel')) ? id : null;
-	}
+	// --- Email assembler ---
+	// Assembles mailto href from split data attributes so the address never
+	// appears as plain text in source HTML (basic scraper deterrent).
 
-	// Switch to a panel by id.
-	function switchPanel(id) {
-		var target = document.getElementById(id);
-		if (!target) return;
-
-		// Find current active panel.
-		var current = content.querySelector('.panel.active');
-		if (current === target) return;
-
-		// Update nav active state.
-		navLinks.forEach(function (l) { l.classList.remove('active'); });
-		var href = id === 'home' ? '#' : '#' + id;
-		var activeLink = nav.querySelector('.nav-link[href="' + href + '"]');
-		if (activeLink) activeLink.classList.add('active');
-
-		if (current) {
-			// Fade out current.
-			current.classList.remove('active');
-			current.classList.add('transitioning-out');
-
-			setTimeout(function () {
-				current.classList.remove('transitioning-out');
-
-				// Fade in target.
-				target.classList.add('transitioning-in');
-
-				// Force reflow so the browser registers opacity:0 before transitioning.
-				void target.offsetHeight;
-
-				target.classList.remove('transitioning-in');
-				target.classList.add('active');
-
-				window.scrollTo(0, 0);
-			}, 350);
-		} else {
-			// No current panel (initial load edge case).
-			target.classList.add('active');
-		}
-	}
-
-	// Panel link click handler (works for nav links and any internal hash links).
-	function handlePanelClick(e) {
-		var href = this.getAttribute('href');
-
-		// External link — let it through.
-		if (!href || href.charAt(0) !== '#')
-			return;
-
-		e.preventDefault();
-		e.stopPropagation();
-
-		var id = resolvePanel(href);
-		if (!id) return;
-
-		var newHash = id === 'home' ? '' : '#' + id;
-		if (window.location.hash === newHash || (newHash === '' && !window.location.hash)) {
-			return;
-		}
-
-		if (newHash === '') {
-			history.pushState(null, '', window.location.pathname);
-			switchPanel('home');
-		} else {
-			window.location.hash = newHash;
-		}
-	}
-
-	// Bind to nav links.
-	navLinks.forEach(function (link) {
-		link.addEventListener('click', handlePanelClick);
+	document.querySelectorAll('a[data-u][data-d]').forEach(function (el) {
+		el.href = 'mailto:' + el.getAttribute('data-u') + '@' + el.getAttribute('data-d');
 	});
 
-	// Bind to any in-page quick links that point to panels.
-	document.querySelectorAll('.quick-link[href^="#"]').forEach(function (link) {
-		link.addEventListener('click', handlePanelClick);
-	});
+	// --- Scroll-based active nav ---
 
-	// Initialize on load.
-	(function () {
-		var id = resolvePanel(window.location.hash) || 'home';
-		panels.forEach(function (p) {
-			p.classList.remove('active');
+	function updateActiveNav() {
+		var navH   = nav.offsetHeight;
+		var scrollY = window.scrollY + navH + 16;
+		var current = '';
+
+		sections.forEach(function (s) {
+			if (s.offsetTop <= scrollY) {
+				current = s.id;
+			}
 		});
-		switchPanel(id);
-	})();
 
-	// Handle browser back/forward.
-	window.addEventListener('hashchange', function () {
-		var id = resolvePanel(window.location.hash) || 'home';
-		switchPanel(id);
-	});
+		navLinks.forEach(function (l) { l.classList.remove('active'); });
+		if (navBrand) navBrand.classList.remove('active');
+
+		if (current === 'home' || current === '') {
+			if (navBrand) navBrand.classList.add('active');
+		} else if (current) {
+			var activeLink = nav.querySelector('.nav-link[href="#' + current + '"]');
+			if (activeLink) activeLink.classList.add('active');
+		}
+	}
+
+	window.addEventListener('scroll', updateActiveNav, { passive: true });
+	updateActiveNav(); // run once on initial load
+
+	// --- Show more for projects ---
+	// Cards beyond SHOW_LIMIT are hidden until the button is clicked.
+	// With <= SHOW_LIMIT projects the button never appears.
+
+	var grid       = document.querySelector('.project-grid');
+	var SHOW_LIMIT = 10;
+
+	if (grid) {
+		var cards = Array.from(grid.querySelectorAll('.project-card'));
+
+		if (cards.length > SHOW_LIMIT) {
+			cards.slice(SHOW_LIMIT).forEach(function (c) {
+				c.classList.add('project-card--hidden');
+			});
+
+			var btn = document.createElement('button');
+			btn.className   = 'show-more-btn';
+			btn.textContent = 'Show ' + (cards.length - SHOW_LIMIT) + ' more projects';
+
+			btn.addEventListener('click', function () {
+				cards.forEach(function (c) {
+					c.classList.remove('project-card--hidden');
+				});
+				btn.remove();
+			});
+
+			grid.after(btn);
+		}
+	}
 
 })();

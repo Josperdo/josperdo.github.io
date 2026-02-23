@@ -24,15 +24,17 @@
 	<!-- Layout shell -->
 	<div id="layout">
 
-		<!-- Sidebar Nav (becomes top bar on mobile) -->
+		<!-- Top Nav -->
 		<nav id="nav">
 			<div class="nav-inner">
-				<a href="#" data-panel="home" class="nav-link icon solid fa-home"><span>Home</span></a>
-				<a href="#work" data-panel="work" class="nav-link icon solid fa-folder"><span>Projects</span></a>
-				<a href="https://substack.com/@josperdo" target="_blank" rel="noopener" class="nav-link icon solid fa-pen-nib"><span>Substack</span></a>
-				<a href="https://github.com/josperdo" target="_blank" rel="noopener" class="nav-link icon brands fa-github"><span>GitHub</span></a>
-				<a href="https://www.linkedin.com/in/johnrobsperry/" target="_blank" rel="noopener" class="nav-link icon brands fa-linkedin"><span>LinkedIn</span></a>
-				<a href="#contact" data-panel="contact" class="nav-link icon solid fa-envelope"><span>Contact</span></a>
+				<a href="#" class="nav-brand nav-link">Home</a>
+				<div class="nav-links">
+					<a href="#work" class="nav-link">Projects</a>
+					<a href="https://substack.com/@josperdo" target="_blank" rel="noopener" class="nav-link">Substack</a>
+					<a href="https://github.com/josperdo" target="_blank" rel="noopener" class="nav-link">GitHub</a>
+					<a href="https://www.linkedin.com/in/johnrobsperry/" target="_blank" rel="noopener" class="nav-link">LinkedIn</a>
+					<a href="#contact" class="nav-link">Contact</a>
+				</div>
 			</div>
 		</nav>
 
@@ -40,78 +42,297 @@
 		<main id="content">
 
 			<!-- Home -->
-			<article id="home" class="panel">
-				<section class="hero">
-					<div class="hero-content">
+			<section id="home" class="hero">
+				<div class="hero-content">
 						<h1>John Sperry</h1>
-						<p class="subtitle">Builder & Security Enthusiast</p>
+						<p class="subtitle">Cybersecurity Practitioner</p>
 						<div class="hero-divider"></div>
-						<p class="intro-blurb">I build tools and write about what I learn along the way. Explore my projects below, or read my latest thinking on Substack.</p>
-						<div class="quick-links">
-							<a href="#work" class="quick-link">
-								<i class="fas fa-folder"></i>
-								<span>View Projects</span>
-							</a>
-							<a href="https://substack.com/@josperdo" target="_blank" rel="noopener" class="quick-link">
-								<i class="fas fa-pen-nib"></i>
-								<span>Read Substack</span>
-							</a>
-							<a href="https://github.com/josperdo" target="_blank" rel="noopener" class="quick-link">
-								<i class="fab fa-github"></i>
-								<span>Browse GitHub</span>
-							</a>
-						</div>
+						<p class="intro-blurb">Security analyst by day, builder by habit. I work at the intersection of GRC, cloud security, and detection engineering. I build tools when something doesn't exist the way I need it to.</p>
 					</div>
-				</section>
-			</article>
+			</section>
 
 			<!-- Projects -->
-			<article id="work" class="panel">
+			<section id="work">
+				<div class="panel-inner">
 				<header>
 					<h2>Projects</h2>
-					<p>Some of these are ongoing — check the repos for the latest updates.</p>
+					<p>A collection of tools I've built. Some are ongoing — check the repos for the latest.</p>
 				</header>
 				<div class="project-grid">
+
+					<!-- azure-soc-terraform -->
 					<div class="project-card">
-						<h3>Log Event Filter</h3>
-						<p>Python utility that parses authentication logs to identify failed SSH login attempts, tracks repeat offenders, and exports results to CSV/JSON.</p>
-						<div class="project-links">
-							<a href="https://github.com/Josperdo/Log-Event-Filter" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						<div class="card-media">
+							<div class="card-media-term">
+								<div class="term-bar">
+									<span class="term-dot term-dot--r"></span>
+									<span class="term-dot term-dot--y"></span>
+									<span class="term-dot term-dot--g"></span>
+									<span class="term-title">azure-soc-terraform</span>
+								</div>
+								<div class="term-body">
+									<span class="term-line"><span class="term-ps">$</span> terraform apply ./soc</span>
+									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">azure-soc-terraform</h3>
+								<span class="badge badge--wip">In Dev</span>
+							</div>
+							<p class="card-desc">Cloud-native security operations center deployed on Azure using Terraform IaC. Reproducible, modular detection infrastructure.</p>
+							<div class="card-tags">
+								<span class="tag tag--terraform">Terraform</span>
+								<span class="tag tag--azure">Azure</span>
+								<span class="tag tag--iac">IaC</span>
+								<span class="tag tag--soc">SOC</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/josperdo/azure-soc-terraform" target="_blank" rel="noopener" class="card-link">
+									<i class="fab fa-github"></i> GitHub
+								</a>
+							</div>
 						</div>
 					</div>
+
+					<!-- priv-check -->
 					<div class="project-card">
-						<h3>Security Baseline Checker</h3>
-						<p>Lightweight Bash utility for auditing basic security configurations on Linux systems, including privilege escalation checks and group membership analysis.</p>
-						<div class="project-links">
-							<a href="https://github.com/Josperdo/Security-Baseline-Checker" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						<div class="card-media">
+							<div class="card-media-term">
+								<div class="term-bar">
+									<span class="term-dot term-dot--r"></span>
+									<span class="term-dot term-dot--y"></span>
+									<span class="term-dot term-dot--g"></span>
+									<span class="term-title">priv-check</span>
+								</div>
+								<div class="term-body">
+									<span class="term-line"><span class="term-ps">$</span> ./priv-check --audit --all</span>
+									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">priv-check</h3>
+								<span class="badge badge--live">Live</span>
+							</div>
+							<p class="card-desc">PowerShell IAM auditing tool for surfacing privileged access, stale accounts, and risky group memberships across Active Directory.</p>
+							<div class="card-tags">
+								<span class="tag tag--powershell">PowerShell</span>
+								<span class="tag tag--iam">IAM</span>
+								<span class="tag tag--ad">Active Directory</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/josperdo/priv-check" target="_blank" rel="noopener" class="card-link">
+									<i class="fab fa-github"></i> GitHub
+								</a>
+							</div>
 						</div>
 					</div>
+
+					<!-- sidebet -->
 					<div class="project-card">
-						<h3>Azure Security Monitor</h3>
-						<p>Parses Azure Activity Logs to detect risky operations like elevated RBAC assignments and Key Vault secret access.</p>
-						<div class="project-links">
-							<a href="https://github.com/Josperdo/Azure-Security-Monitor" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						<div class="card-media">
+							<div class="card-media-locked">
+								<i class="fas fa-lock card-lock-icon"></i>
+								<span class="card-lock-label">Closed Source</span>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">sidebet</h3>
+								<span class="badge badge--closed">Closed Source</span>
+							</div>
+							<p class="card-desc">NBA player prop prediction model. ML pipeline serving forecasts via FastAPI with a React frontend.</p>
+							<div class="card-tags">
+								<span class="tag tag--python">Python</span>
+								<span class="tag tag--ml">ML</span>
+								<span class="tag tag--fastapi">FastAPI</span>
+								<span class="tag tag--react">React</span>
+							</div>
+							<div class="card-links">
+								<span class="card-link-muted"><i class="fas fa-code-branch"></i> Private repo</span>
+							</div>
 						</div>
 					</div>
+					<!-- scanlyne -->
 					<div class="project-card">
-						<h3>Winlog-Detect</h3>
-						<p>Parses Windows Security event logs to detect failed-logon surges and suspicious process creation patterns like encoded PowerShell and certutil abuse.</p>
-						<div class="project-links">
-							<a href="https://github.com/Josperdo/winlog-detect" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						<div class="card-media">
+							<div class="card-media-locked">
+								<i class="fas fa-lock card-lock-icon"></i>
+								<span class="card-lock-label">Closed Source</span>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">scanlyne</h3>
+								<span class="badge badge--closed">Closed Source</span>
+							</div>
+							<p class="card-desc">Network change detection engine with security context. Tracks topology shifts over time and flags anomalous changes.</p>
+							<div class="card-tags">
+								<span class="tag tag--python">Python</span>
+								<span class="tag tag--flask">Flask</span>
+								<span class="tag tag--nmap">nmap</span>
+							</div>
+							<div class="card-links">
+								<span class="card-link-muted"><i class="fas fa-code-branch"></i> Private repo</span>
+							</div>
 						</div>
 					</div>
+
+					<!-- reelphish -->
 					<div class="project-card">
-						<h3>Mjolnir</h3>
-						<p>Discord bot that monitors game playtime and applies temporary timeouts to users who exceed weekly hour limits. Opt-in tracking with SQLite persistence.</p>
-						<div class="project-links">
-							<a href="https://github.com/Josperdo/mjolnir" target="_blank" rel="noopener" class="link-accent">View on GitHub</a>
+						<div class="card-media">
+							<div class="card-media-term">
+								<div class="term-bar">
+									<span class="term-dot term-dot--r"></span>
+									<span class="term-dot term-dot--y"></span>
+									<span class="term-dot term-dot--g"></span>
+									<span class="term-title">reelphish</span>
+								</div>
+								<div class="term-body">
+									<span class="term-line"><span class="term-ps">$</span> python reelphish.py --parse</span>
+									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">reelphish</h3>
+								<span class="badge badge--live">Live</span>
+							</div>
+							<p class="card-desc">Phishing email IOC extraction and analysis tool. Parses raw email headers and bodies to surface indicators of compromise.</p>
+							<div class="card-tags">
+								<span class="tag tag--python">Python</span>
+								<span class="tag tag--ioc">IOC</span>
+								<span class="tag tag--threat-intel">Threat Intel</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/josperdo/reelphish" target="_blank" rel="noopener" class="card-link">
+									<i class="fab fa-github"></i> GitHub
+								</a>
+							</div>
 						</div>
 					</div>
+
+					<!-- loglaundry -->
+					<div class="project-card">
+						<div class="card-media">
+							<div class="card-media-term">
+								<div class="term-bar">
+									<span class="term-dot term-dot--r"></span>
+									<span class="term-dot term-dot--y"></span>
+									<span class="term-dot term-dot--g"></span>
+									<span class="term-title">loglaundry</span>
+								</div>
+								<div class="term-body">
+									<span class="term-line"><span class="term-ps">$</span> loglaundry --tail auth.log</span>
+									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">loglaundry</h3>
+								<span class="badge badge--live">Live</span>
+							</div>
+							<p class="card-desc">SSH authentication log analysis and brute force detection. Identifies patterns and repeat offenders in /var/log/auth.log.</p>
+							<div class="card-tags">
+								<span class="tag tag--python">Python</span>
+								<span class="tag tag--log-analysis">Log Analysis</span>
+								<span class="tag tag--ssh">SSH</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/josperdo/loglaundry" target="_blank" rel="noopener" class="card-link">
+									<i class="fab fa-github"></i> GitHub
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- baselinr -->
+					<div class="project-card">
+						<div class="card-media">
+							<div class="card-media-term">
+								<div class="term-bar">
+									<span class="term-dot term-dot--r"></span>
+									<span class="term-dot term-dot--y"></span>
+									<span class="term-dot term-dot--g"></span>
+									<span class="term-title">baselinr</span>
+								</div>
+								<div class="term-body">
+									<span class="term-line"><span class="term-ps">$</span> ./baselinr --check all</span>
+									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">baselinr</h3>
+								<span class="badge badge--live">Live</span>
+							</div>
+							<p class="card-desc">Linux security baseline auditing utility. Checks system configuration against hardening standards and surfaces misconfigurations.</p>
+							<div class="card-tags">
+								<span class="tag tag--bash">Bash</span>
+								<span class="tag tag--linux">Linux</span>
+								<span class="tag tag--hardening">Hardening</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/josperdo/baselinr" target="_blank" rel="noopener" class="card-link">
+									<i class="fab fa-github"></i> GitHub
+								</a>
+							</div>
+						</div>
+					</div>
+
+
 				</div>
-			</article>
+				</div><!-- /.panel-inner -->
+			</section>
+
+			<!--
+			  ============================================================
+			  PRIVATE ROADMAP — FOR PERSONAL REFERENCE ONLY
+			  This section is intentionally commented out. Nothing below
+			  is rendered on the page. Do not uncomment.
+			  ============================================================
+
+			  1. tildex
+			     GUI dotfiles manager for Linux
+			     Stack: Go, Wails, Svelte
+			     Status: Planned — pending Go learning
+			     Notes: Wails bridges a Go backend with a Svelte web UI for
+			            a native-feeling dotfile manager. Learn Go fundamentals
+			            before starting. Long-term goal.
+
+			  2. scanlyne v2
+			     Full change detection dashboard with visual diff UI
+			     Stack: Extend current Python / Flask base
+			     Status: Planned — after scanlyne v1 stabilizes
+			     Notes: Visualize topology changes over time with a side-by-side
+			            diff view. Visual indicators for added / removed / modified
+			            hosts and open ports.
+
+			  3. homelab expansion
+			     Wazuh SIEM integration, detection engineering labs
+			     Status: Ongoing
+			     Notes: Build and tune detection rules, document findings.
+			            Consider writing a Substack post on the homelab setup
+			            and detection engineering workflow.
+
+			  4. portfolio site v2
+			     Replace placeholder card demos with real GIF recordings
+			     Status: Pending — needs polished projects first
+			     Notes: Record terminal sessions for CLI tools; screen captures
+			            for any web UIs. Replace .card-media-term placeholder
+			            divs with <img> tags pointing to assets/demos/*.gif
+
+			  ============================================================
+			-->
 
 			<!-- Contact -->
-			<article id="contact" class="panel">
+			<section id="contact">
 				<header>
 					<h2>Get in Touch</h2>
 				</header>
@@ -130,7 +351,7 @@
 						<span>substack.com/@josperdo</span>
 					</a>
 				</div>
-			</article>
+			</section>
 
 		</main>
 
