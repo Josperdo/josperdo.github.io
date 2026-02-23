@@ -1,6 +1,6 @@
 # josperdo.github.io
 
-Personal portfolio site.
+Personal portfolio site — single-page scroll layout showcasing security and dev projects.
 
 ## Stack
 
@@ -11,4 +11,4 @@ Personal portfolio site.
 
 ## Local Development
 
-Open `index.html` in a browser. No build step required.
+Open `index.html` in a browser or use any static file server. No build step required.
