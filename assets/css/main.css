@@ -289,6 +289,51 @@ section[id] {
 	width: 100%;
 }
 
+/* --- Contribution Activity --- */
+
+#activity {
+	padding: 4rem;
+	border-top: 1px solid var(--border);
+}
+
+#activity header {
+	margin-bottom: 1.5rem;
+}
+
+.activity-chart-wrap {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.25rem 1.5rem;
+	overflow: hidden;
+}
+
+.activity-chart {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.activity-footer {
+	margin-top: 0.9rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.activity-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.82rem;
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: color var(--transition);
+}
+
+.activity-link:hover {
+	color: var(--accent);
+}
+
 /* --- Project Grid --- */
 
 .project-grid {
@@ -647,6 +692,7 @@ section[id] {
 		justify-content: center;
 	}
 
+	#activity,
 	#work {
 		padding: 3rem 2rem;
 	}
@@ -690,6 +736,7 @@ section[id] {
 		font-size: 1.25rem;
 	}
 
+	#activity,
 	#work {
 		padding: 2.5rem 1.5rem;
 	}
@@ -712,6 +759,7 @@ section[id] {
 		font-size: 1.75rem;
 	}
 
+	#activity,
 	#work {
 		padding: 2rem 1rem;
 	}
