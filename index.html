@@ -83,10 +83,12 @@
 					<p>A collection of tools I've built. Some are ongoing — check the repos for the latest.</p>
 				</header>
 				<div class="project-grid">
-
 					<!-- azure-soc-terraform -->
 					<div class="project-card">
 						<div class="card-media">
+							<!-- GIF DEMO -- drop azure-soc-terraform.gif into assets/demos/ then uncomment below and delete the card-media-term block
+							<img src="assets/demos/azure-soc-terraform.gif" alt="azure-soc-terraform demo" loading="lazy" />
+							-->
 							<div class="card-media-term">
 								<div class="term-bar">
 									<span class="term-dot term-dot--r"></span>
@@ -105,12 +107,12 @@
 								<h3 class="card-title">Azure SOC Platform</h3>
 								<span class="badge badge--live">Open Source</span>
 							</div>
-							<p class="card-desc">Modular Terraform deployment for an Azure-based Security Operations Center (SOC) lab environment.</p>
+							<p class="card-desc">Modular Terraform deployment for an Azure SOC lab. Provisions Sentinel, Log Analytics, and Bastion with KQL detection rules and MITRE ATT&CK mapping.</p>
 							<div class="card-tags">
 								<span class="tag tag--terraform">Terraform</span>
 								<span class="tag tag--azure">Azure</span>
-								<span class="tag tag--iac">IaC</span>
-								<span class="tag tag--soc">SOC</span>
+								<span class="tag tag--sentinel">Sentinel</span>
+								<span class="tag tag--kql">KQL</span>
 							</div>
 							<div class="card-links">
 								<a href="https://github.com/josperdo/azure-soc-terraform" target="_blank" rel="noopener" class="card-link">
@@ -120,35 +122,63 @@
 						</div>
 					</div>
 
-					<!-- priv-check -->
+					<!-- scanlyne -->
 					<div class="project-card">
 						<div class="card-media">
+							<img src="assets/demos/scanlyne.gif" alt="scanlyne demo" loading="lazy" />
+						</div>
+						<div class="card-body">
+							<div class="card-header">
+								<h3 class="card-title">Scanlyne</h3>
+								<span class="badge badge--live">Open Source</span>
+							</div>
+							<p class="card-desc">Network change detection engine with security context. Tracks topology shifts over time and flags anomalous changes.</p>
+							<div class="card-tags">
+								<span class="tag tag--python">Python</span>
+								<span class="tag tag--flask">Flask</span>
+								<span class="tag tag--nmap">nmap</span>
+								<span class="tag tag--docker">Docker</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/josperdo/scanlyne" target="_blank" rel="noopener" class="card-link">
+									<i class="fab fa-github"></i> GitHub
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- reelphish -->
+					<div class="project-card">
+						<div class="card-media">
+							<!-- GIF DEMO -- drop reelphish.gif into assets/demos/ then uncomment below and delete the card-media-term block
+							<img src="assets/demos/reelphish.gif" alt="reelphish demo" loading="lazy" />
+							-->
 							<div class="card-media-term">
 								<div class="term-bar">
 									<span class="term-dot term-dot--r"></span>
 									<span class="term-dot term-dot--y"></span>
 									<span class="term-dot term-dot--g"></span>
-									<span class="term-title">priv-check</span>
+									<span class="term-title">reelphish</span>
 								</div>
 								<div class="term-body">
-									<span class="term-line"><span class="term-ps">$</span> ./priv-check --audit --all</span>
+									<span class="term-line"><span class="term-ps">$</span> python reelphish.py --parse</span>
 									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
 								</div>
 							</div>
 						</div>
 						<div class="card-body">
 							<div class="card-header">
-								<h3 class="card-title">PrivCheck</h3>
+								<h3 class="card-title">ReelPhish</h3>
 								<span class="badge badge--live">Open Source</span>
 							</div>
-							<p class="card-desc">PowerShell IAM auditing tool for surfacing privileged access, stale accounts, and risky group memberships across Active Directory.</p>
+							<p class="card-desc">Phishing .eml analysis tool. Extracts IOCs, scores URLs against weighted rulesets, and optionally enriches results through VirusTotal.</p>
 							<div class="card-tags">
-								<span class="tag tag--powershell">PowerShell</span>
-								<span class="tag tag--iam">IAM</span>
-								<span class="tag tag--ad">Active Directory</span>
+								<span class="tag tag--python">Python</span>
+								<span class="tag tag--ioc">IOC</span>
+								<span class="tag tag--virustotal">VirusTotal</span>
 							</div>
 							<div class="card-links">
-								<a href="https://github.com/josperdo/priv-check" target="_blank" rel="noopener" class="card-link">
+								<a href="https://github.com/josperdo/reelphish" target="_blank" rel="noopener" class="card-link">
 									<i class="fab fa-github"></i> GitHub
 								</a>
 							</div>
@@ -158,6 +188,9 @@
 					<!-- sidebet -->
 					<div class="project-card">
 						<div class="card-media">
+							<!-- GIF DEMO -- drop sidebet.gif into assets/demos/ then uncomment below and delete the card-media-term block
+							<img src="assets/demos/sidebet.gif" alt="sidebet demo" loading="lazy" />
+							-->
 							<div class="card-media-term">
 								<div class="term-bar">
 									<span class="term-dot term-dot--r"></span>
@@ -188,42 +221,13 @@
 							</div>
 						</div>
 					</div>
-					<!-- scanlyne -->
-					<div class="project-card">
-						<div class="card-media">
-							<div class="card-media-term">
-								<div class="term-bar">
-									<span class="term-dot term-dot--r"></span>
-									<span class="term-dot term-dot--y"></span>
-									<span class="term-dot term-dot--g"></span>
-									<span class="term-title">scanlyne</span>
-								</div>
-								<div class="term-body">
-									<span class="term-line"><span class="term-ps">$</span> python scanlyne.py --scan</span>
-									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
-								</div>
-							</div>
-						</div>
-						<div class="card-body">
-							<div class="card-header">
-								<h3 class="card-title">Scanlyne</h3>
-								<span class="badge badge--closed">Closed Source</span>
-							</div>
-							<p class="card-desc">Network change detection engine with security context. Tracks topology shifts over time and flags anomalous changes.</p>
-							<div class="card-tags">
-								<span class="tag tag--python">Python</span>
-								<span class="tag tag--flask">Flask</span>
-								<span class="tag tag--nmap">nmap</span>
-							</div>
-							<div class="card-links">
-								<span class="card-link-muted"><i class="fas fa-code-branch"></i> Private repo</span>
-							</div>
-						</div>
-					</div>
 
 					<!-- baselinr -->
 					<div class="project-card">
 						<div class="card-media">
+							<!-- GIF DEMO -- drop baselinr.gif into assets/demos/ then uncomment below and delete the card-media-term block
+							<img src="assets/demos/baselinr.gif" alt="baselinr demo" loading="lazy" />
+							-->
 							<div class="card-media-term">
 								<div class="term-bar">
 									<span class="term-dot term-dot--r"></span>
@@ -247,6 +251,7 @@
 								<span class="tag tag--bash">Bash</span>
 								<span class="tag tag--linux">Linux</span>
 								<span class="tag tag--hardening">Hardening</span>
+								<span class="tag tag--cis">CIS</span>
 							</div>
 							<div class="card-links">
 								<a href="https://github.com/josperdo/baselinr" target="_blank" rel="noopener" class="card-link">
@@ -256,35 +261,38 @@
 						</div>
 					</div>
 
-					<!-- reelphish -->
+					<!-- priv-check -->
 					<div class="project-card">
 						<div class="card-media">
+							<!-- GIF DEMO -- drop priv-check.gif into assets/demos/ then uncomment below and delete the card-media-term block
+							<img src="assets/demos/priv-check.gif" alt="priv-check demo" loading="lazy" />
+							-->
 							<div class="card-media-term">
 								<div class="term-bar">
 									<span class="term-dot term-dot--r"></span>
 									<span class="term-dot term-dot--y"></span>
 									<span class="term-dot term-dot--g"></span>
-									<span class="term-title">reelphish</span>
+									<span class="term-title">priv-check</span>
 								</div>
 								<div class="term-body">
-									<span class="term-line"><span class="term-ps">$</span> python reelphish.py --parse</span>
+									<span class="term-line"><span class="term-ps">$</span> ./priv-check --audit --all</span>
 									<span class="term-line term-out">demo coming soon<span class="term-cursor">▌</span></span>
 								</div>
 							</div>
 						</div>
 						<div class="card-body">
 							<div class="card-header">
-								<h3 class="card-title">ReelPhish</h3>
+								<h3 class="card-title">PrivCheck</h3>
 								<span class="badge badge--live">Open Source</span>
 							</div>
-							<p class="card-desc">Phishing email IOC extraction and analysis tool. Parses raw email headers and bodies to surface indicators of compromise.</p>
+							<p class="card-desc">PowerShell utility for auditing local privileged group memberships on Windows. Surfaces elevated access, flags dormant accounts, and exports findings to CSV.</p>
 							<div class="card-tags">
-								<span class="tag tag--python">Python</span>
-								<span class="tag tag--ioc">IOC</span>
-								<span class="tag tag--threat-intel">Threat Intel</span>
+								<span class="tag tag--powershell">PowerShell</span>
+								<span class="tag tag--iam">IAM</span>
+								<span class="tag tag--windows">Windows</span>
 							</div>
 							<div class="card-links">
-								<a href="https://github.com/josperdo/reelphish" target="_blank" rel="noopener" class="card-link">
+								<a href="https://github.com/josperdo/priv-check" target="_blank" rel="noopener" class="card-link">
 									<i class="fab fa-github"></i> GitHub
 								</a>
 							</div>
@@ -294,6 +302,9 @@
 					<!-- loglaundry -->
 					<div class="project-card">
 						<div class="card-media">
+							<!-- GIF DEMO -- drop loglaundry.gif into assets/demos/ then uncomment below and delete the card-media-term block
+							<img src="assets/demos/loglaundry.gif" alt="loglaundry demo" loading="lazy" />
+							-->
 							<div class="card-media-term">
 								<div class="term-bar">
 									<span class="term-dot term-dot--r"></span>
@@ -317,6 +328,7 @@
 								<span class="tag tag--python">Python</span>
 								<span class="tag tag--log-analysis">Log Analysis</span>
 								<span class="tag tag--ssh">SSH</span>
+								<span class="tag tag--mitre">MITRE ATT&CK</span>
 							</div>
 							<div class="card-links">
 								<a href="https://github.com/josperdo/loglaundry" target="_blank" rel="noopener" class="card-link">
@@ -337,35 +349,30 @@
 			  is rendered on the page. Do not uncomment.
 			  ============================================================
 
-			  1. tildex
+			  1. TerraSignal 
+			     GUI dotfiles manager for Linux
+			     Stack: Python, Flask?, React, Docker, tbd
+			     Status: Planned
+			     Notes: TerraSignal is a global intelligence platform that aggregates travel advisories, 
+				 conflict data, crime metrics, and economic indicators to generate a composite country-level 
+				 travel risk score.
+
+			  2. soc-lab-docker
+			  	 Stack:Docker, Python, Terraform, shell
+			     Open-source security operations center (SOC) lab environment 
+				 designed for defenders, detection engineers, and security analysts 
+				 to learn and practice blue team tradecraft in a controlled, reproducible, 
+				 and fork-friendly setting.
+			     Status: Ongoing
+			     Notes: Need demo gif once project is completed.
+
+			  3. tildex
 			     GUI dotfiles manager for Linux
 			     Stack: Go, Wails, Svelte
 			     Status: Planned — pending Go learning
 			     Notes: Wails bridges a Go backend with a Svelte web UI for
 			            a native-feeling dotfile manager. Learn Go fundamentals
 			            before starting. Long-term goal.
-
-			  2. scanlyne v2
-			     Full change detection dashboard with visual diff UI
-			     Stack: Extend current Python / Flask base
-			     Status: Planned — after scanlyne v1 stabilizes
-			     Notes: Visualize topology changes over time with a side-by-side
-			            diff view. Visual indicators for added / removed / modified
-			            hosts and open ports.
-
-			  3. homelab expansion
-			     Wazuh SIEM integration, detection engineering labs
-			     Status: Ongoing
-			     Notes: Build and tune detection rules, document findings.
-			            Consider writing a Substack post on the homelab setup
-			            and detection engineering workflow.
-
-			  4. portfolio site v2
-			     Replace placeholder card demos with real GIF recordings
-			     Status: Pending — needs polished projects first
-			     Notes: Record terminal sessions for CLI tools; screen captures
-			            for any web UIs. Replace .card-media-term placeholder
-			            divs with <img> tags pointing to assets/demos/*.gif
 
 			  ============================================================
 			-->

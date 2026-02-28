@@ -623,6 +623,13 @@ section[id] {
 .tag--react        { background: rgba(97,  218, 251, 0.08); color: #61dafb; border-color: rgba(97,  218, 251, 0.22); }
 .tag--fastapi      { background: rgba(16,  185, 129, 0.08); color: #10b981; border-color: rgba(16,  185, 129, 0.22); }
 .tag--ml           { background: rgba(139,  92, 246, 0.08); color: #8b5cf6; border-color: rgba(139,  92, 246, 0.22); }
+.tag--sentinel     { background: rgba(99,  102, 241, 0.08); color: #6366f1; border-color: rgba(99,  102, 241, 0.22); }
+.tag--kql          { background: rgba(6,   182, 212, 0.08); color: #06b6d4; border-color: rgba(6,   182, 212, 0.22); }
+.tag--windows      { background: rgba(59,  130, 246, 0.08); color: #3b82f6; border-color: rgba(59,  130, 246, 0.22); }
+.tag--docker       { background: rgba(14,  165, 233, 0.08); color: #0ea5e9; border-color: rgba(14,  165, 233, 0.22); }
+.tag--cis          { background: rgba(20,  184, 166, 0.08); color: #14b8a6; border-color: rgba(20,  184, 166, 0.22); }
+.tag--virustotal   { background: rgba(37,   99, 235, 0.08); color: #2563eb; border-color: rgba(37,   99, 235, 0.22); }
+.tag--mitre        { background: rgba(220,  38,  38, 0.08); color: #dc2626; border-color: rgba(220,  38,  38, 0.22); }
 
 /* --- Card Links --- */
 
